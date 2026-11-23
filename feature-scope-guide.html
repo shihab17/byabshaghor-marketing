@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ব্যবসাঘর — মার্কেটিং টিমের পূর্ণ গাইড</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700;800&family=Hind+Siliguri:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f5f7fb; --card:#ffffff; --line:#e3e8f0; --line2:#eef1f6;
+  --ink:#0f1c33; --ink2:#43516b; --ink3:#8a97b0;
+  --blue:#1e5eff; --blue-bg:#eaf0ff; --grn:#0ca678; --grn-bg:#e6f7f0;
+  --amb:#e8590c; --amb-bg:#fff3e8; --rose:#e03131;
+  --sh:0 1px 3px rgba(15,28,51,.06),0 8px 24px rgba(15,28,51,.06);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:'Hind Siliguri','Anek Bangla',sans-serif;background:var(--bg);color:var(--ink);line-height:1.8;font-size:15.5px}
+a{color:var(--blue)}
+
+/* ── top bar ── */
+.topbar{position:fixed;top:0;left:0;right:0;height:58px;z-index:80;
+  background:rgba(255,255,255,.92);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);display:flex;align-items:center;gap:14px;padding:0 22px}
+.logo{display:flex;align-items:center;gap:10px;font:800 17px 'Anek Bangla'}
+.logo i{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,var(--blue),#0ca678);
+  display:grid;place-items:center;color:#fff;font:800 15px 'Plus Jakarta Sans';font-style:normal}
+.topbar .tag{font-size:12.5px;color:var(--ink3);border:1px solid var(--line);border-radius:99px;padding:3px 12px}
+.topbar .sp{flex:1}
+.btn{background:var(--blue);color:#fff;border:0;border-radius:9px;padding:8px 16px;
+  font:700 13px 'Plus Jakarta Sans';cursor:pointer}
+.btn.ghost{background:#fff;color:var(--blue);border:1.5px solid var(--blue)}
+#menuBtn{display:none;background:none;border:1px solid var(--line);border-radius:9px;
+  font-size:18px;padding:5px 12px;cursor:pointer;color:var(--ink)}
+
+/* ── layout ── */
+.layout{display:flex;max-width:1280px;margin:58px auto 0}
+.side{position:sticky;top:58px;height:calc(100vh - 58px);overflow-y:auto;
+  width:250px;flex:0 0 250px;padding:26px 16px;border-right:1px solid var(--line);background:var(--bg)}
+.side .lbl{font:700 11px 'Plus Jakarta Sans';color:var(--ink3);letter-spacing:1.2px;margin:0 10px 10px}
+.side a{display:flex;gap:10px;align-items:center;padding:9px 12px;border-radius:10px;
+  color:var(--ink2);text-decoration:none;font-weight:600;font-size:14.5px;margin:2px 0}
+.side a .no{flex:0 0 24px;height:24px;border-radius:8px;background:var(--line2);color:var(--ink3);
+  font:700 12px 'Plus Jakarta Sans';display:grid;place-items:center}
+.side a:hover{background:#eaf0fa;color:var(--ink)}
+.side a.on{background:var(--blue-bg);color:var(--blue)}
+.side a.on .no{background:var(--blue);color:#fff}
+.side .foot{margin-top:22px;padding:12px;border-top:1px solid var(--line);font-size:12.5px;color:var(--ink3)}
+
+main{flex:1;min-width:0;padding:36px 46px 120px}
+section{margin-bottom:64px}
+.sec-head{display:flex;align-items:baseline;gap:14px;border-bottom:2px solid var(--ink);padding-bottom:12px;margin-bottom:18px}
+.sec-head .num{font:800 30px 'Plus Jakarta Sans';color:var(--blue)}
+.sec-head h2{font:800 26px 'Anek Bangla';letter-spacing:-.3px}
+.sec-head .sub{color:var(--ink3);font-size:14px;margin-left:auto;text-align:right}
+h3{font:700 19px 'Anek Bangla';margin:30px 0 10px;display:flex;align-items:center;gap:8px}
+h3::before{content:"";width:5px;height:20px;border-radius:3px;background:var(--blue)}
+p{margin:8px 0;color:var(--ink2)}
+.lead{font-size:16.5px;color:var(--ink2);max-width:780px}
+b,strong{color:var(--ink)}
+
+/* hero inside start */
+.hero{background:linear-gradient(135deg,#0e2a6b,#1e5eff 55%,#0ca678);border-radius:22px;
+  color:#fff;padding:38px 40px;margin-bottom:30px;box-shadow:var(--sh)}
+.hero h1{font:800 clamp(24px,3.4vw,34px) 'Anek Bangla';line-height:1.35}
+.hero p{color:#d9e6ff;max-width:640px;margin-top:10px}
+.hero .chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+.hero .chip{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);
+  border-radius:99px;padding:6px 15px;font-size:13px;color:#eaf1ff}
+.hero .chip b{color:#fff}
+
+/* cards / tables / steps */
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;box-shadow:var(--sh)}
+.card p{font-size:14.5px}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(215px,1fr))}
+table{width:100%;border-collapse:separate;border-spacing:0;background:var(--card);
+  border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:14px 0;font-size:14.3px;box-shadow:var(--sh)}
+th{background:#f0f4fb;color:var(--ink2);text-align:left;padding:11px 15px;font:700 12px 'Plus Jakarta Sans';
+  text-transform:uppercase;letter-spacing:.7px}
+td{padding:11px 15px;border-top:1px solid var(--line2);color:var(--ink2);vertical-align:top}
+tr:hover td{background:#f8faff}
+code{background:#fff4d6;border:1px solid #ffe3a3;border-radius:6px;padding:1px 7px;
+  font-size:13px;color:#92580a;font-family:'Plus Jakarta Sans',monospace}
+
+.key{border-left:4px solid #94a3c4;background:#eef2f9;border-radius:0 12px 12px 0;
+  padding:13px 18px;margin:16px 0;color:var(--ink2);font-size:15px}
+.key b{color:var(--ink)}
+.warn{border-left:4px solid var(--amb);background:var(--amb-bg);border-radius:0 12px 12px 0;
+  padding:13px 18px;margin:16px 0;color:#7a3a08;font-size:14.5px}
+.warn::before{content:"⚠ মনে রাখবেন";display:block;font:700 11px 'Plus Jakarta Sans';color:var(--amb);letter-spacing:1px;margin-bottom:3px}
+ul.tick{list-style:none;padding:0}
+ul.tick li{padding:6px 0 6px 30px;position:relative;color:var(--ink2)}
+ul.tick li::before{content:"✓";position:absolute;left:6px;top:6px;width:20px;height:20px;border-radius:50%;
+  background:var(--grn-bg);color:var(--grn);font-weight:800;font-size:12px;display:grid;place-items:center}
+
+/* step flow */
+.step{display:flex;gap:16px;margin:14px 0}
+.step .n{flex:0 0 36px;height:36px;border-radius:50%;background:var(--blue);color:#fff;
+  font:800 15px 'Plus Jakarta Sans';display:grid;place-items:center;box-shadow:0 3px 8px rgba(30,94,255,.3)}
+.step .b{flex:1;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;box-shadow:var(--sh)}
+.step .b h4{font-size:16px;margin-bottom:2px}
+.step .b p{font-size:14px;margin:4px 0 0}
+
+.pill{display:inline-block;border-radius:6px;padding:1px 9px;font:700 11px 'Plus Jakarta Sans';margin-left:6px;vertical-align:middle}
+.pill.web{background:var(--blue-bg);color:var(--blue)}
+.pill.app{background:var(--grn-bg);color:var(--grn)}
+.pill.biz{background:var(--amb-bg);color:var(--amb)}
+.pill.pre{background:#ffe3e3;color:var(--rose)}
+
+/* feature row: text + image alternating */
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:center;margin:22px 0}
+.frow.rev .ftext{order:2}
+.frow .ftext h4{font:700 18px 'Anek Bangla';margin-bottom:6px}
+.frow .ftext p{font-size:14.5px}
+.frow figure{margin:0}
+figure{margin:16px 0}
+figure img{width:100%;border-radius:14px;border:1px solid var(--line);display:block;
+  cursor:zoom-in;background:#fff;box-shadow:var(--sh);transition:transform .2s}
+figure img:hover{transform:scale(1.005)}
+figcaption{font-size:12.5px;color:var(--ink3);text-align:center;margin-top:8px}
+.phones{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:18px;align-items:start}
+.phones figure img{border-radius:20px}
+/* landscape app/desktop screenshots — 2-col grid */
+.apps{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:18px;align-items:start}
+.apps figure{margin:0}
+/* single phone screenshot, centered at phone-like width */
+.pfig{max-width:330px;margin:16px auto}
+.pfig img{border-radius:20px}
+
+.lb{position:fixed;inset:0;background:rgba(10,18,35,.9);z-index:120;display:none;
+  align-items:center;justify-content:center;cursor:zoom-out;padding:24px}
+.lb.open{display:flex}
+.lb img{max-width:96%;max-height:94%;border-radius:12px;box-shadow:0 20px 80px #000}
+
+/* mobile */
+@media(max-width:960px){
+  #menuBtn{display:block}
+  .side{position:fixed;left:0;top:58px;bottom:0;z-index:70;transform:translateX(-100%);
+    transition:.25s;background:#fff;border-right:1px solid var(--line);width:270px}
+  .side.open{transform:none;box-shadow:0 0 60px rgba(0,0,0,.25)}
+  main{padding:26px 18px 90px}
+  .frow,.frow.rev{grid-template-columns:1fr}
+  .frow.rev .ftext{order:0}
+  .topbar .tag{display:none}
+}
+@media print{
+  .topbar,.side,.lb{display:none!important}
+  .layout{display:block;max-width:none;margin-top:0}
+  main{padding:0 12px}
+  body{background:#fff}
+  .card,table,.step .b,figure{break-inside:avoid;box-shadow:none}
+  .sec-head{break-after:avoid}
+  section{margin-bottom:26px}
+  .hero{background:#fff!important;color:#111;border:1.5px solid #bbb;box-shadow:none}
+  .hero p{color:#333}
+  .hero .chip{background:#f4f4f4;border-color:#bbb;color:#333}
+  .hero .chip b{color:#111}
+  figure img{max-height:320px;object-fit:contain}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <button id="menuBtn" onclick="document.querySelector('.side').classList.toggle('open')">☰</button>
+  <span class="logo"><i>ব</i>ব্যবসাঘর</span>
+  <span class="tag">মার্কেটিং টিমের গাইড · ভার্সন ২</span>
+  <span class="sp"></span>
+  <button class="btn ghost" onclick="document.getElementById('s8').scrollIntoView()">ডেমো স্ক্রিপ্ট</button>
+  <button class="btn" onclick="window.print()">Print / PDF</button>
+</div>
+
+<div class="layout">
+<nav class="side" id="side">
+  <div class="lbl">অধ্যায়</div>
+  <a href="#s1"><span class="no">১</span>শুরু এখানে</a>
+  <a href="#s2"><span class="no">২</span>বিক্রি কীভাবে করবেন</a>
+  <a href="#s3"><span class="no">৩</span>ক্রয় ও মজুদ</a>
+  <a href="#s4"><span class="no">৪</span>রিপোর্ট</a>
+  <a href="#s5"><span class="no">৫</span>সিম্পল মোড (খাতা)</a>
+  <a href="#s6"><span class="no">৬</span>ফার্মেসি স্পেশাল</a>
+  <a href="#s7"><span class="no">৭</span>দোকানের ম্যাপ</a>
+  <a href="#s8"><span class="no">৮</span>ডেমো ও লগিন</a>
+  <div class="foot">ছবিতে ক্লিক করলে বড় হয়<br>সব ডেমো পাসওয়ার্ড: <b>Demo@12345</b></div>
+</nav>
+
+<main>
+
+<!-- ═══ S1 START ═══ -->
+<section id="s1">
+  <div class="hero">
+    <h1>দোকানের পুরো হিসাব —<br>সহজ ভাষায় পূর্ণ গাইড</h1>
+    <p>টেকনিক্যাল না হলেও চলবে — বিক্রি, বাকি, ক্রয়, মজুদ, রিপোর্ট, ম্যাপ —
+    প্রতিটা কাজ ধাপে ধাপে, আসল স্ক্রিনশটসহ। মূল ফোকাস: মুদি/সুপার শপ আর ফার্মেসি।</p>
+    <div class="chips">
+      <span class="chip">ডেমো পাসওয়ার্ড: <b>Demo@12345</b></span>
+      <span class="chip">ওয়েব: <b>dev.byabshaghor.com</b></span>
+      <span class="chip">ছবিতে ক্লিক = <b>বড়</b></span>
+    </div>
+  </div>
+
+  <div class="sec-head"><span class="num">০১</span><h2>প্রথমে বুঝুন — এটা আসলে কী</h2>
+    <span class="sub">২ মিনিট পড়ুন</span></div>
+  <p class="lead">ব্যবসাঘর দোকানের <b>পুরো হিসাবের সফটওয়্যার</b> — বিক্রি, বাকি, ক্রয়,
+  মজুদ, খরচ, কর্মচারী, রিপোর্ট সব এক জায়গায়। মোবাইলেও চলে, কম্পিউটারেও চলে,
+  <b>নেট না থাকলেও চলে</b>।</p>
+
+  <div class="frow">
+    <div class="ftext">
+      <h4>ওয়েব ড্যাশবোর্ড — মালিকের অফিস</h4>
+      <p>ব্রাউজারে <code>dev.byabshaghor.com</code> খুললেই পুরো সিস্টেম — বিক্রি থেকে
+      HRM, সব রিপোর্ট, সেটিংস, ম্যাপ বানানো। বামের সাইডবারেই সব মেনু সাজানো।</p>
+      <p><span class="pill web">WEB</span> মালিক/ম্যানেজারের জন্য — হিসাব দেখা, সেটআপ করা।</p>
+    </div>
+    <figure><img src="shots/modi-dokan/modi_web_01_dashboard.png" alt="ওয়েব ড্যাশবোর্ড">
+      <figcaption>আজকের বিক্রি-লাভ-পাওনা-দেনা-স্টক এক নজরে</figcaption></figure>
+  </div>
+
+  <div class="frow rev">
+    <div class="ftext">
+      <h4>মোবাইল অ্যাপ — কাউন্টারের হাতিয়ার</h4>
+      <p>ক্যাশিয়ার আর সেলসম্যানের কাজের জায়গা — বিক্রি, বাকি আদায়, দিন বন্ধ,
+      খাতা মোড। <b>নেট ছাড়াও বিক্রি চলে</b>, পরে নিজে সিঙ্ক হয়।</p>
+      <p><span class="pill app">APP</span> ফোন/ট্যাব/ডেস্কটপে চলে।</p>
+    </div>
+    <figure style="max-width:300px;margin:0 auto"><img src="shots/01_dashboard.png" alt="অ্যাপ ড্যাশবোর্ড">
+      <figcaption>অ্যাপের হোম — একই হিসাব পকেটে</figcaption></figure>
+  </div>
+
+  <h3>কে কী দেখে — ৫টা সহজ নিয়ম</h3>
+  <p>একই সফটওয়্যার প্রতিটা দোকানে ভিন্ন মুখে আসে। কার কাছে কোন ফিচার দেখা যাবে
+  তা ৫টা জিনিসে ঠিক হয়:</p>
+  <div class="grid g3">
+    <div class="card"><b>১ · দোকানের ধরন</b><p>খুচরা / পাইকার / রেস্টুরেন্ট / সার্ভিস ব্যবসা</p></div>
+    <div class="card"><b>২ · ক্যাটাগরি</b><p>~৭০টা — ফার্মেসি, মুদি, সুপার শপ, মোবাইল শপ…</p></div>
+    <div class="card"><b>৩ · প্যাকেজ</b><p>Free · Starter ৳৪৯৯ · Business ৳১,২৯৯ · Premium ৳২,৯৯৯/মাস</p></div>
+    <div class="card"><b>৪ · রোল</b><p>মালিক · ম্যানেজার · কর্মচারী — কর্মচারী শুধু নিজের কাজ দেখে</p></div>
+    <div class="card"><b>৫ · কাস্টম সেটআপ</b><p>যেকোনো দোকানকে আলাদা ফিচার দেওয়া/বন্ধ করা যায়</p></div>
+    <div class="card"><b>＋ নামও বদলায়</b><p>পাইকারে "কাস্টমার" → "পার্টি"। অ্যাপ দোকানের ভাষা শেখে।</p></div>
+  </div>
+  <div class="key"><b>মূল কথা:</b> দোকানের ধরন বললেই অ্যাপ নিজে ঠিক করে নেয় কী দেখাবে —
+  ফার্মেসিতে মেয়াদ, মোবাইল শপে IMEI, মুদিতে বাকির খাতা।</div>
+</section>
+
+<!-- ═══ S2 SELL ═══ -->
+<section id="s2">
+  <div class="sec-head"><span class="num">০২</span><h2>বিক্রি কীভাবে করবেন</h2>
+    <span class="sub">৪ ধাপ · ১০ সেকেন্ডে একটা বিল</span></div>
+  <p class="lead">POS স্ক্রিনটাই দোকানের কাউন্টার — ওয়েবে হোক অ্যাপে, একই রকম কাজ।</p>
+
+  <div class="step"><div class="n">১</div><div class="b">
+    <h4>POS খুলুন <span class="pill web">WEB</span><span class="pill app">APP</span></h4>
+    <p>মেনুতে "POS" / অ্যাপের নিচে গাড়ির আইকন। বারকোড স্ক্যান করুন বা নাম লিখে খুঁজুন —
+    ছবিসহ পণ্য গ্রিডে চলে আসে।</p>
+  </div></div>
+  <div class="step"><div class="n">২</div><div class="b">
+    <h4>পণ্য যোগ করুন</h4>
+    <p>কার্ডে "+" চাপলেই বিলে যোগ। পরিমাণ বাড়ান-কমান, ডিসকাউন্ট দিন — পিসে বা
+    কেজি/লিটারে (মুদির জন্য)।</p>
+  </div></div>
+  <div class="step"><div class="n">৩</div><div class="b">
+    <h4>পেমেন্ট নিন</h4>
+    <p>ক্যাশ, bKash/Nagad, ব্যাংক, কার্ড — যেকোনো মিশ্র। <b>বাকিও দেওয়া যায়</b> —
+    কাস্টমার বেছে আংশিক দিলে বাকিটা নিজে খাতায় জমা হয়।</p>
+  </div></div>
+  <div class="step"><div class="n">৪</div><div class="b">
+    <h4>ইনভয়েস দিন</h4>
+    <p>বাংলা ইনভয়েস — দোকানের নাম-ঠিকানা, আইটেম, মোট বাকিসহ QR কোড। প্রিন্ট বা
+    WhatsApp-এ পাঠানো যায়।</p>
+  </div></div>
+
+  <figure><img src="shots/guide/modi_pos.png" alt="ওয়েব POS">
+    <figcaption>ওয়েব POS — ছবি, দাম, স্টকসহ পণ্য গ্রিড; ডানে বিল ও পেমেন্ট প্যানেল</figcaption></figure>
+  <div class="phones">
+    <figure><img src="shots/04_pos.png" alt="অ্যাপ POS">
+      <figcaption>অ্যাপ POS — জেনেরিক নাম, Rx ব্যাজ</figcaption></figure>
+    <figure><img src="shots/06_invoice.png" alt="ইনভয়েস">
+      <figcaption>বাংলা ইনভয়েস — মোট বাকি ৳৯২৪, QRসহ</figcaption></figure>
+    <figure><img src="shots/05_sales_history.png" alt="বিক্রির ইতিহাস">
+      <figcaption>সব বিল ফিরে দেখা যায়</figcaption></figure>
+    <figure><img src="shots/modi-dokan/modi_16_barcode_scanner.png" alt="বারকোড">
+      <figcaption>ফোনের ক্যামেরাই স্ক্যানার</figcaption></figure>
+  </div>
+
+  <h3>বাকি দিয়ে বিক্রি ও আদায়</h3>
+  <div class="frow">
+    <div class="ftext">
+      <h4>বাকিতে বিক্রি</h4>
+      <p>পেমেন্টের সময় কাস্টমার বেছে "বাকি" — নাম-ফোনসহ খাতায় জমা, তারিখসহ।</p>
+      <h4 style="margin-top:14px">বাকি আদায়</h4>
+      <p>কাস্টমার পেজে বা খাতা থেকে "আদায়" — পুরো বা আংশিক, যেকোনো পেমেন্টে।
+      আদায়ের রেকর্ড থেকে যায়।</p>
+    </div>
+    <figure style="max-width:300px;margin:0 auto"><img src="shots/12_due_collect.png" alt="বাকি আদায়">
+      <figcaption>বাকি আদায় — আংশিকও চলে</figcaption></figure>
+  </div>
+  <div class="key">ক্যাশ না বাকি — একই স্ক্রিনে। আর যখনই কাস্টমার টাকা দেয়,
+  এক ট্যাপে খাতা মিটে যায়।</div>
+</section>
+
+<!-- ═══ S3 STOCK ═══ -->
+<section id="s3">
+  <div class="sec-head"><span class="num">০৩</span><h2>ক্রয় ও মজুদ</h2>
+    <span class="sub">মাল কেনা → স্টক হিসাব → মেয়াদ</span></div>
+
+  <h3>ক্রয় করতে ৩টা ধাপ</h3>
+  <div class="step"><div class="n">১</div><div class="b">
+    <h4>নতুন ক্রয় <span class="pill web">WEB</span><span class="pill app">APP</span></h4>
+    <p>সাপ্লায়ার বাছুন → তারিখ-চালান নং → পণ্য খুঁজে পরিমাণ-দাম দিন।
+    মুদি/ফার্মেসিতে প্রতি লাইনে <b>মেয়াদও লেখা যায়</b>।</p>
+  </div></div>
+  <div class="step"><div class="n">২</div><div class="b">
+    <h4>পেমেন্ট বা দেনা</h4>
+    <p>নগদ দিলে ক্যাশবক্স থেকে কমে; না দিলে <b>সাপ্লায়ারের কাছে দেনা</b> — পরে মিটায়।</p>
+  </div></div>
+  <div class="step"><div class="n">৩</div><div class="b">
+    <h4>"Post Purchase" চাপুন</h4>
+    <p>স্টক নিজে বাড়ে, হিসাব নিজে জমা হয় — হাতে কিছু লিখতে হয় না। ভুল হলে রিটার্ন/বাতিল আছে।</p>
+  </div></div>
+  <figure><img src="shots/guide/modi_purchase_new.png" alt="নতুন ক্রয়">
+    <figcaption>নতুন ক্রয় ফর্ম — সাপ্লায়ার, চালান, পণ্য সার্চ; ডানে মোট-পরিশোধ-বাকি</figcaption></figure>
+
+  <h3>ইনভেন্টরি — যা যা ম্যানেজ হয়</h3>
+  <div class="grid g3">
+    <div class="card"><b>পণ্য তালিকা</b><p>দাম, কোড, স্টক, ছবি; "স্টক শেষ/কম স্টক" ব্যাজ। এক্সেল ইমপোর্ট-এক্সপোর্ট।</p></div>
+    <div class="card"><b>ক্যাটাগরি · ব্র্যান্ড · একক</b><p>দলে সাজান; কার্টনে কিনে পিসে বিক্রি (UOM কনভার্সন)।</p></div>
+    <div class="card"><b>স্টক অ্যাডজাস্টমেন্ট</b><p>নষ্ট/ভাঙা/হারানো মাল — কারণসহ রেকর্ড।</p></div>
+    <div class="card"><b>স্টক গোনা</b><p>আসল মাল গুনে সিস্টেম মেলানো — মাসে/বছরে একবার।</p></div>
+    <div class="card"><b>আজকের দাম</b><p>পিঁয়াজ-আলুর মতো দৈনিক দামের রেট-লিস্ট।</p></div>
+    <div class="card"><b>মেয়াদ অ্যালার্ট</b><p>কোন ব্যাচ কবে শেষ — আগেই জানে, ফেরত দেওয়া যায়। <span class="pill biz">Business+</span></p></div>
+  </div>
+  <div class="phones">
+    <figure><img src="shots/08_products.png" alt="পণ্য তালিকা">
+      <figcaption>পণ্য তালিকা — স্টক শেষ (লাল), কম (হলুদ), পর্যাপ্ত (সবুজ)</figcaption></figure>
+    <figure><img src="shots/guide/modi_stockadj.png" alt="অ্যাডজাস্ট">
+      <figcaption>স্টক অ্যাডজাস্টমেন্ট — কেন কম/বেশি সব রেকর্ড</figcaption></figure>
+    <figure><img src="shots/guide/modi_stocktake.png" alt="স্টক গোনা">
+      <figcaption>স্টক গোনা — আসল মাল বনাম সিস্টেম</figcaption></figure>
+    <figure><img src="shots/guide/modi_todayprice.png" alt="আজকের দাম">
+      <figcaption>আজকের দাম — দৈনিক রেট-লিস্ট</figcaption></figure>
+  </div>
+  <figure><img src="shots/guide/modi_expiry.png" alt="মেয়াদ">
+    <figcaption>মেয়াদ অ্যালার্ট — কোন ব্যাচ কত দিনে শেষ, কত টাকার মাল ঝুঁকিতে, "Return" বাটনে ফেরত</figcaption></figure>
+
+  <h3>প্রতিটা পণ্যের ভেতরের খবর — ব্যাচ, দাম, মুনাফা <span class="pill app">APP</span></h3>
+  <p class="lead">পণ্য তালিকায় নামে ট্যাপ করলেই পুরো অতীত খুলে যায় — কে কবে কত দামে দিল,
+  কোন ব্যাচে কত মাল আছে, কার কাছ থেকে কেনা সবচেয়ে সস্তা। কিনতে বসার আগেই
+  হিসাব হাতে পাওয়া যায়।</p>
+  <div class="grid g3">
+    <div class="card"><b>ব্যাচভেদে পুরো খতিয়ান</b><p>কোন ব্যাচ কোন চালানে এল, কত বাকি, মেয়াদে কত দিন —
+    ব্যাচে চাপলে সরাসরি <b>স্টক যোগ/বাদ</b> বা <b>সরবরাহকারীতে ফেরত</b> করা যায়।</p></div>
+    <div class="card"><b>দামের বিশ্লেষণ + গ্রাফ</b><p>শেষ কেনা দাম, গড় কেনা দাম, গড় মুনাফা,
+    আর কেনা-বেচা দামের ধাপে-ধাপে গ্রাফ — তারিখ বাছেও দেখা যায়।</p></div>
+    <div class="card"><b>সরবরাহকারী তুলনা</b><p>একই পণ্যে কে সস্তা কে দামি — প্রতি সরবরাহকারীর
+    সর্বনিম্ন/সর্বোচ্চ/সর্বশেষ দাম এক নজরে; সস্তা-দামি ব্যাজসহ।</p></div>
+  </div>
+  <div class="phones">
+    <figure><img src="shots/guide/ph_product_detail.png" alt="পণ্যের বিস্তারিত">
+      <figcaption>পণ্যের বিস্তারিত — দাম-স্টক-স্টক ঠিক আছে ব্যাজের নিচেই ব্যাচ তালিকা (চালান, বাকি, মেয়াদ, লাভ)</figcaption></figure>
+    <figure><img src="shots/guide/ph_batches_insights.png" alt="দামের বিশ্লেষণ">
+      <figcaption>"দামের বিশ্লেষণ" — সবচেয়ে সস্তা সরবরাহকারী (Beximco), গড় মুনাফা ৳২, কেনা বনাম বেচা দামের গ্রাফ</figcaption></figure>
+    <figure><img src="shots/guide/ph_batches_list.png" alt="সরবরাহকারী তুলনা">
+      <figcaption>সরবরাহকারী তুলনা (সস্তা/দামি ব্যাজ) + সারসংক্ষেপ: মোট ১৩ ব্যাচ, স্টক মূল্য ৳১১,০৫২, লাভ ৳৩০</figcaption></figure>
+    <figure><img src="shots/guide/ph_batch_sheet.png" alt="ব্যাচ বিস্তারিত">
+      <figcaption>ব্যাচে চাপলে পুরো খতিয়ান — সরবরাহকারী, চালান, মেয়াদে ৪০২ দিন বাকি; নিচে সম্পাদনা·স্টক যোগ/বাদ·ফেরত</figcaption></figure>
+  </div>
+  <div class="warn">কেনা দাম, মুনাফা আর সরবরাহকারী তুলনা শুধু <b>কেনা দাম দেখার অনুমতি</b> আছে এমন
+  ব্যবহারকারীর কাছে খোলে; ব্যাচে স্টক যোগ/বাদ/ফেরত করতে পারে <b>মালিক/ম্যানেজার</b>।
+  কর্মচারী দেখে বিক্রির দাম আর স্টক।</div>
+
+  <h3>ভিড়ে কুইক সেল, ফাঁকায় আইটেম ঠিক — স্টকও ঠিক থাকে</h3>
+  <p class="lead">ইনভেন্টরি চালানো দোকানেও ভিড়ের ঘণ্টায় পণ্য বাছার সময় থাকে না। তখন কুইক সেলে
+  শুধু মোট টাকা লিখে বিক্রি শেষ করুন — ফাঁকা সময়ে বিলে আসল পণ্যগুলো বসিয়ে দিন।
+  বিলের টাকা এক পয়সাও বদলায় না; ঠিক হয় শুধু স্টক আর লাভের হিসাব।</p>
+  <div class="step"><div class="n">১</div><div class="b">
+    <h4>ভিড়ে শুধু টাকা লিখে বিক্রি <span class="pill app">APP</span></h4>
+    <p>কুইক সেলে মোট মূল্য + পেমেন্ট — ব্যাস। কী কী নিল মনে রাখতে অ্যাপ বারের
+    <b>ক্লিপে ছবি বা ভয়েস নোট</b> জুড়ে দিন; নোটেও লেখা যায়।</p>
+  </div></div>
+  <div class="step"><div class="n">২</div><div class="b">
+    <h4>ফাঁকায় ইনভয়েস খুলে ⋮ মেনু</h4>
+    <p>বিক্রির ইতিহাস → বিল → ডান-উপরের ⋮ — সেখানেই <b>"আইটেম ঠিক করুন"</b>;
+    সাথে পেমেন্ট যোগ, আইটেম ফেরত, ইনভয়েস বাতিল।</p>
+  </div></div>
+  <div class="step"><div class="n">৩</div><div class="b">
+    <h4>আসল পণ্যগুলো বসিয়ে সংরক্ষণ</h4>
+    <p>"+ পণ্য যোগ করুন" দিয়ে লাইন বসান — নিচে <b>আইটেমের মোট</b> বিলের টাকার সাথে
+    মেলে কিনা দেখায়। বিল আর রশিদ আগেরটাই থাকে; বদলায় শুধু স্টক কমা আর লাভের হিসাব।</p>
+  </div></div>
+  <div class="phones">
+    <figure><img src="shots/guide/ph_invoice_menu.png" alt="ইনভয়েস মেনু">
+      <figcaption>পোস্ট হওয়া বিলের ⋮ মেনু — আইটেম ঠিক করুন, পেমেন্ট যোগ, আইটেম ফেরত, বাতিল</figcaption></figure>
+    <figure><img src="shots/guide/ph_fix_items.png" alt="আইটেম ঠিক করুন">
+      <figcaption>"আইটেম ঠিক করুন" — বিলের মোট ৳৩৯০ জমা থাকে, লিখেও আছে "টাকার অঙ্ক বদলাবে না"; পণ্য যোগ করে আইটেমের মোট মেলান</figcaption></figure>
+  </div>
+  <div class="grid g3">
+    <div class="card"><b>ক্রয়েও একই নিয়ম</b><p>কুইক ক্রয়ের চালানেও পরে আইটেম ঠিক — মাল ঢোকার স্টক হিসাবও ঠিক থাকে।</p></div>
+    <div class="card"><b>ভুল হলে ফেরত</b><p>ইনভয়েস মেনুর "আইটেম ফেরত"; কেনা মাল ফেরত গেলে পারচেজ রিটার্ন — দুদিকেই স্টক ঠিক হয়।</p></div>
+    <div class="card"><b>মেলানোর হাতিয়ার আছেই</b><p>স্টক অ্যাডজাস্টমেন্ট, স্টক গোনা আর দিন বন্ধ — দিন শেষে টাকা আর মাল দুটোই মেলে।</p></div>
+  </div>
+  <div class="warn">"আইটেম ঠিক করুন" শুধু <b>মালিক/ম্যানেজার</b> পায় — কর্মচারী তাড়াতাড়ি বিক্রি করে,
+  মালিক পরে ঠিক করে দেয়। এভাবেই দুটো কাজ একসাথে চলে।</div>
+  <div class="key">স্টক শেষের আগেই জানায়, মেয়াদের আগেই জানায় — মালের টাকা আর ডুবে যায় না।</div>
+</section>
+
+<!-- ═══ S4 REPORTS ═══ -->
+<section id="s4">
+  <div class="sec-head"><span class="num">০৪</span><h2>রিপোর্ট</h2>
+    <span class="sub">খাতা উল্টানো লাগে না</span></div>
+  <p class="lead">সব লেনদেন থেকে নিজে রিপোর্ট তৈরি হয়। মালিকের জন্য সবচেয়ে দামি অংশ।</p>
+  <div class="grid g3">
+    <div class="card"><b>ড্যাশবোর্ড</b><p>আজকের বিক্রি-লাভ-খরচ-পাওনা-দেনা, কম স্টক, মেয়াদ — এক নজরে।</p></div>
+    <div class="card"><b>বিক্রি রিপোর্ট</b><p>দিন/সপ্তাহ/মাসে বিক্রি-লাভ, গড় বিল, ট্রেন্ড, সেরা পণ্য।</p></div>
+    <div class="card"><b>দৈনিক খাতা</b><p>প্রতিদিনের আসল-গেল আর জের — খাতার ডিজিটাল সংস্করণ।</p></div>
+    <div class="card"><b>পাওনা-দেনা</b><p>কার কাছে কত পাবেন/দেবেন — কাস্টমার ও সাপ্লায়ার একসাথে।</p></div>
+    <div class="card"><b>স্টক রিপোর্ট</b><p>মজুদে কত টাকার মাল, কোনটা ঘুরছে কোনটা শুয়ে।</p></div>
+    <div class="card"><b>আরো</b><p>P&amp;L, ভ্যাট, বাকির বয়স, পার্টি খাতা — প্ল্যান অনুযায়ী।</p></div>
+  </div>
+  <figure><img src="shots/guide/modi_rpt_sales.png" alt="বিক্রি রিপোর্ট">
+    <figcaption>বিক্রি রিপোর্ট — আয় ৳২৫,৫৭২, লাভ ৳৩,২৯০ (১২.৯% মার্জিন), ৫৬ ইনভয়েস</figcaption></figure>
+  <div class="phones">
+    <figure><img src="shots/guide/modi_daybook.png" alt="দৈনিক খাতা">
+      <figcaption>দৈনিক খাতা — আসল-গেল-জের</figcaption></figure>
+    <figure><img src="shots/guide/modi_partybal.png" alt="পাওনা-দেনা">
+      <figcaption>পাওনা-দেনা — দেনা ৳১,০১,৩৭৯ / পাওনা ৳১২,৩৫৫</figcaption></figure>
+    <figure><img src="shots/09_reports.png" alt="অ্যাপ রিপোর্ট">
+      <figcaption>অ্যাপেও রিপোর্ট</figcaption></figure>
+    <figure><img src="shots/10_day_report.png" alt="দিনের হিসাব">
+      <figcaption>দিনের হিসাব এক পাতায়</figcaption></figure>
+  </div>
+  <div class="key">মাস শেষে হিসাব মেলাতে রাত জাগতে হয় না — প্রতিদিনের হিসাব নিজে জমা হয়।</div>
+</section>
+
+<!-- ═══ S5 KHATA ═══ -->
+<section id="s5">
+  <div class="sec-head"><span class="num">০৫</span><h2>সিম্পল মোড (তালি খাতা)</h2>
+    <span class="sub">ইনভেন্টরি ছাড়া হিসাব</span></div>
+  <p class="lead">যে দোকানদার স্টক ম্যানেজ করতে চায় না — শুধু <b>বিক্রি, বাকি, খরচ, ক্যাশ</b> —
+  তার জন্য পুরো অ্যাপ একটা সহজ ভিউতে নেমে আসে। বাকির খাতার ডিজিটাল রূপ।
+  "তালি খাতা" মেনুতে যা যা থাকে:</p>
+  <div class="grid g3">
+    <div class="card"><b>খাতা হোম</b><p>মোট পাবো/দেবো, আজকের বিক্রি-আদায়-খরচ এক নজরে; কাস্টমার/সাপ্লায়ার/প্রাপক — সবার হিসাব একসাথে, সার্চ ও ফিল্টারসহ।</p></div>
+    <div class="card"><b>কুইক সেল</b><p>পণ্য না থাকলেও দাম লিখে বিক্রি — তালিকা বানানো লাগে না।</p></div>
+    <div class="card"><b>কুইক পারচেস</b><p>একইভাবে সরাসরি কেনার হিসাব — দেনা হিসাবেও চলে।</p></div>
+    <div class="card"><b>খরচ</b><p>ভাড়া, খরচাপাতি, যেকোনো কাট খরচ — ক্যাশবক্স থেকে নিজে কমে।</p></div>
+    <div class="card"><b>ক্যাশবক্স</b><p>ক্যাশ + bKash/Nagad ওয়ালেট একসাথে; জমা-উত্তোলন-ট্রান্সফার সব রেকর্ড।</p></div>
+    <div class="card"><b>দিন বন্ধ</b><p>দিনের শেষে সব হিসাব গুনে মিলিয়ে বন্ধ — নিচে বিস্তারিত।</p></div>
+    <div class="card"><b>কাস্টমার · সাপ্লায়ার · প্রাপক</b><p>তিন রকম মানুষের পাওনা-দেনার তালিকা আলাদা আলাদা।</p></div>
+    <div class="card"><b>বিক্রির তালিকা</b><p>দিনের সব বিল ফিরে দেখা যায়।</p></div>
+    <div class="card"><b>"সব মেনু"</b><p>যেকোনো সময় পূর্ণ ভিউতে ফেরা — দোকান বড় হলে সঙ্গে বড়।</p></div>
+  </div>
+  <div class="phones">
+    <figure><img src="shots/13_khata.png" alt="খাতা">
+      <figcaption>খাতা হোম — পাবো ৳৪,১৭৭ / দেবো ৳১৬,০১৬</figcaption></figure>
+    <figure><img src="shots/11_cashbox.png" alt="ক্যাশবক্স">
+      <figcaption>ক্যাশবক্স — ক্যাশ + ওয়ালেট</figcaption></figure>
+    <figure><img src="shots/12_due_collect.png" alt="আদায়">
+      <figcaption>বাকি আদায় — আংশিকও চলে</figcaption></figure>
+    <figure><img src="shots/modi-dokan/modi_07_menu.png" alt="মেনু">
+      <figcaption>"তালি খাতা" মেনু গ্রুপ</figcaption></figure>
+  </div>
+
+  <h3>অ্যাপে সিম্পল মোড — ফোনের আসল স্ক্রিন</h3>
+  <div class="phones">
+    <figure><img src="shots/guide/ph_menu_full.png" alt="খাতা মেনু">
+      <figcaption>"তালি খাতা" মেনু — খাতা হোম, দ্রুত বিক্রি, বিক্রির ইতিহাস, দ্রুত ক্রয়, খরচ, ক্যাশ বক্স, দিন বন্ধ, কাস্টমার, সরবরাহকারী, প্রাপক তালিকা</figcaption></figure>
+    <figure><img src="shots/guide/ph_khata_home.png" alt="খাতা হোম">
+      <figcaption>খাতা হোম — দ্রুত বিক্রির বড় বাটন, বাকি আদায়-খরচ-দ্রুত ক্রয়-ক্যাশ বক্স শর্টকাট; আজকের বিক্রি-পাওনা-বিল এক নজরে</figcaption></figure>
+    <figure><img src="shots/guide/ph_quicksale.png" alt="দ্রুত বিক্রি">
+      <figcaption>দ্রুত বিক্রি — নামপ্যাডে শুধু মোট মূল্য লিখে বিক্রি; কাস্টমার ঐচ্ছিক, Cash/bKash পেমেন্ট</figcaption></figure>
+    <figure><img src="shots/guide/ph_quickpurchase.png" alt="দ্রুত ক্রয়">
+      <figcaption>দ্রুত ক্রয় — সরবরাহকারী বেছে মোট মূল্য; ছাড় আর পরিশোধ একই পর্দায়</figcaption></figure>
+    <figure><img src="shots/guide/ph_expenses.png" alt="খরচ">
+      <figcaption>খরচ — আজকের আর মাসের খরচ আলাদা; পোস্টেড/ড্রাফট ফিল্টারসহ তালিকা</figcaption></figure>
+    <figure><img src="shots/guide/ph_cashbox.png" alt="ক্যাশ বক্স">
+      <figcaption>ক্যাশ বক্স — বর্তমান ব্যালেন্স, জমা-উত্তোলন বাটন, ক্যাশ ফ্লো চার্ট আর ধরন অনুযায়ী ভাগ</figcaption></figure>
+    <figure><img src="shots/guide/ph_customers.png" alt="কাস্টমার">
+      <figcaption>কাস্টমার — উপরে মোট বাকি, নিচে জনে জনে পাওনা</figcaption></figure>
+    <figure><img src="shots/guide/ph_suppliers.png" alt="সরবরাহকারী">
+      <figcaption>সরবরাহকারী — কার কাছে কত দেনা, আলাদা করে দেখা যায়</figcaption></figure>
+    <figure><img src="shots/guide/ph_payees.png" alt="প্রাপক">
+      <figcaption>প্রাপক তালিকা — যাদের টাকা দিতে হবে (কর্মচারী, পরিষেবা) তাদের হিসাব</figcaption></figure>
+    <figure><img src="shots/guide/ph_sales_history.png" alt="বিক্রির ইতিহাস">
+      <figcaption>বিক্রির ইতিহাস — উপরে মোট বিক্রি-পরিশোধ-বাকি-ছাড়, নিচে বিলে বিলে ড্রাফট/পরিশোধিত</figcaption></figure>
+  </div>
+
+  <h3>দ্রুত বিক্রি/ক্রয় — সরল দেখতে, ভেতরে পুরো বিলের শক্তি</h3>
+  <p class="lead">"শুধু টাকা লিখে বিক্রি" ভাবলে অর্ধেক কথা বলা হয়। মোট মূল্যের পাশের
+  <b>ক্যালকুলেটর আইকনেই</b> লুকিয়ে আছে পুরো বিলের হাতিয়ার — হিসাব লেখা থেকে
+  পণ্য বসানো পর্যন্ত।</p>
+  <div class="grid g3">
+    <div class="card"><b>হিসাব লিখলেই উত্তর</b><p>মূল্যের ঘরে <b>120*3+80*2</b> লিখতেই = ৳৫২০;
+    ক্যালকুলেটরে চাপলে পুরো নামপ্যাড + আগের হিসাব — একই বার-বারের বিল এক ট্যাপে।</p></div>
+    <div class="card"><b>"পণ্য দিয়ে" — পণ্যও বসে</b><p>ক্যালকুলেটরের দ্বিতীয় ট্যাবে সার্চ/স্ক্যান/
+    "ঘন ঘন বিক্রি হয়" তালিকা থেকে পণ্য — পরিমাণ×দাম লাইন বানিয়ে "বিলে রাখুন" দিলে
+    <b>স্টকও কমে</b>। শুধু টাকা চাইলে "শুধু মোটে বসান"।</p></div>
+    <div class="card"><b>ছাড় + গোল করুন</b><p>সারা বিলে ৳ বা % ছাড়; "গোল করুন" টিক দিলে
+    ২২৩ টাকা → ২২৩ না লিখে ২২০/২২৫ — রাউন্ড-অফ নিজে হিসাব হয়।</p></div>
+    <div class="card"><b>নোট গুনে জমা + স্প্লিট</b><p>পরিশোধের ঘরে নোট-কাউন্টার:
+    ৫০০×২ + ১০০×৩ গুনলেই মোট বসে, ফেরতও দেখায়। নগদ+বিকাশ মিলিয়ে
+    <b>দুই মাধ্যমে জমা</b>ও নেয়।</p></div>
+    <div class="card"><b>আগের পাওনা নিজে ধরে</b><p>কাস্টমার বাছলেই পুরনো পাওনা/অগ্রিম দেখায় —
+    "এই বিলের সাথে যোগ করুন" টিক দিলে এক বিলে আদায়। বাকি দিলে কাস্টমার বাধ্যতামূলক।</p></div>
+    <div class="card"><b>ক্রয়েও চালান-ব্যাচ</b><p>দ্রুত ক্রয়ের "আরও তথ্য"-তে চালান নম্বর,
+    ব্যাচ নম্বর, ডেলিভারি চার্জ; তারিখও বদলানো যায়। দিন বন্ধের পরে কিনলে জিজ্ঞেস করে —
+    ক্যাশবক্সে বসবে না শুধু খাতায় লেখা হবে।</p></div>
+  </div>
+  <div class="phones">
+    <figure><img src="shots/guide/ph_billcalc.png" alt="বিল ক্যালকুলেটর">
+      <figcaption>মূল্যের ঘরের ক্যালকুলেটর — "120*3+80*2" লিখতেই = ৳৫২০; পাশের ট্যাবেই "পণ্য দিয়ে"</figcaption></figure>
+    <figure><img src="shots/guide/ph_billcalc_products.png" alt="পণ্য দিয়ে">
+      <figcaption>"পণ্য দিয়ে" ট্যাব — সার্চ/স্ক্যান আর "ঘন ঘন বিক্রি হয়" তালিকা স্টকসহ; লাইনে পরিমাণ বাড়া-কমা, নিচে "বিলে রাখুন"</figcaption></figure>
+    <figure><img src="shots/guide/ph_quicksale_items.png" alt="পণ্যসহ বিক্রি">
+      <figcaption>পণ্য বসানো দ্রুত বিক্রি — "পণ্য (১টি · ৳২০)" + অতিরিক্ত মূল্য আলাদা; "গোল করুন" টিক, নিচে বাকি ৳২০ দেখিয়ে চেপে-ধরে পোস্ট</figcaption></figure>
+    <figure><img src="shots/guide/ph_qp_more.png" alt="ক্রয়ের আরও তথ্য">
+      <figcaption>দ্রুত ক্রয়ের "আরও তথ্য" — চালান নম্বর, ব্যাচ নম্বর, ডেলিভারি চার্জ, নোট; পরিশোধে নোট-কাউন্টার আইকন</figcaption></figure>
+  </div>
+  <div class="warn">ভুল চাপা থেকে বাঁচতে পোস্ট বাটন <b>চেপে ধরে</b> কাজ করে; অর্ধেক বিল "খসড়া" রেখে
+  পরে শেষ করা যায়। বাকির সীমা, ক্রেডিট লিমিট বা MRP-এর বেশি দাম হলে বিক্রি <b>আটকায় না —
+  সতর্ক করে জিজ্ঞেস করে</b>।</div>
+
+  <h3>দিন বন্ধ — দিনের শেষের হিসাব মেলানো</h3>
+  <p class="lead">এটাই সিম্পল মোডের সবচেয়ে জরুরি কাজ। দিন শেষে দোকানদার টাকা গুনে
+  বলে "আজকে ঠিক আছে কিনা" — পুরো জিনিসটা এখানে হয়।</p>
+  <div class="step"><div class="n">১</div><div class="b">
+    <h4>দিন বন্ধ খুলুন <span class="pill web">WEB</span><span class="pill app">APP</span></h4>
+    <p>অ্যাপে তালি খাতা মেনু → "দিন বন্ধ"; ওয়েবে Sales → Day Closing।
+    তারিখ আর স্টাফ বেছে নিন।</p>
+  </div></div>
+  <div class="step"><div class="n">২</div><div class="b">
+    <h4>দিনের সারসংক্ষেপ দেখুন</h4>
+    <p>উপরে এক নজরে: আজকের লাভ, রিটার্ন, খরচ, <b>পুরনো বাকি আদায়</b>,
+    সাপ্লায়ার-প্রাপকের দেনা পরিশোধ — সব।</p>
+  </div></div>
+  <div class="step"><div class="n">৩</div><div class="b">
+    <h4>৪টা হিসাব আলাদা আলাদা মেলান</h4>
+    <p><b>বিক্রি</b> (নিজের), <b>ক্রয়</b> আর <b>খরচ</b> (দোকানজুড়ে), আর <b>ড্রয়ার</b> (ক্যাশবক্সের নগদ)।
+    প্রতিটায় "আসলে কত পেলাম/দিলাম" লিখুন — সিস্টেম নিজে দেখায় <b>মিলে গেছে</b> না <b>ফারাক</b> আছে।</p>
+  </div></div>
+  <div class="step"><div class="n">৪</div><div class="b">
+    <h4>ফারাক থাকলে সমাধান দিন</h4>
+    <p>কম-বেশি থাকলে "দিন বন্ধের সমন্বয়" খরচে পোস্ট হয় বা বাকিতে যোগ হয় —
+    একটা টাকাও হিসাবের বাইরে থাকে না।</p>
+  </div></div>
+  <div class="step"><div class="n">৫</div><div class="b">
+    <h4>"দিন বন্ধ" চাপুন</h4>
+    <p>সব মিললে এক ক্লিকে বন্ধ। ভুলে গেলে <b>রিওপেন</b> করা যায়,
+    আর History ট্যাবে আগের দিনের সব বন্ধের রেকর্ড থাকে।</p>
+  </div></div>
+  <figure class="pfig"><img src="shots/guide/ph_dayclose.png" alt="অ্যাপে দিন বন্ধ">
+    <figcaption>অ্যাপে দিন বন্ধ ("দিনের হিসাব") — তারিখ-স্টাফ বাছাই, হিসাব বন্ধ/বিস্তারিত/অ্যানালিটিক্স/হিস্ট্রি ট্যাব, উপরে দিনের সারসংক্ষেপ; বিক্রি কার্ডে "আসলে পেলাম" লিখলেই মিলে গেছে / ফারাক দেখায়, নিচে "দিন বন্ধ করুন" বাটন</figcaption></figure>
+  <figure><img src="shots/guide/modi_dayclose.png" alt="দিন বন্ধ">
+    <figcaption>ওয়েবে দিন বন্ধ — উপরে দিনের সারসংক্ষেপ, নিচে বিক্রি/ক্রয়/খরচ/ড্রয়ার কার্ড; "আসলে পেলাম" লিখলেই মিল/ফারাক দেখে</figcaption></figure>
+  <figure><img src="shots/guide/modi_cashbox.png" alt="ক্যাশবক্স ওয়েব">
+    <figcaption>ওয়েবে ক্যাশবক্স — বর্তমান ব্যালেন্স, আসল-গেল চার্ট, ধরন অনুযায়ী ভাগ (বিক্রি/কেনা/খরচ/জমা)</figcaption></figure>
+
+  <div class="grid g2">
+    <div class="card"><b>দোকানদার নিজে চালু করে</b><p>অ্যাপ → সেটিংস → <b>"সহজ ভিউ"</b> টগল।</p></div>
+    <div class="card"><b>আমরা জোর করে দিতে পারি</b><p>অ্যাডমিন <code>easy_mode</code> অন — সব ডিভাইসে একসাথে।
+    ছোট দোকানের অনবোর্ডিং এভাবেই।</p></div>
+  </div>
+  <div class="key">বাকির খাতা যেমন চালান — ঠিক তেমন। কিন্তু খাতা হারায় না, সব হিসাব নিজে মেলে।</div>
+</section>
+
+<!-- ═══ S6 PHARMACY ═══ -->
+<section id="s6">
+  <div class="sec-head"><span class="num">০৬</span><h2>ফার্মেসি স্পেশাল</h2>
+    <span class="sub">রেডি ওষুধ ডাটাবেস</span></div>
+  <p class="lead">ফার্মেসি খোলার সবচেয়ে বড় বাধা: হাজার ওষুধের নাম-জেনেরিক-কোম্পানি বসানো।
+  আমাদের <b>রেডি ডাটাবেস</b> থেকে এক ক্লিকে ওষুধ আসে — ছবি, জেনেরিক, MRP, ফর্মসহ।</p>
+  <table>
+    <tr><th>জায়গা</th><th>কী হয়</th></tr>
+    <tr><td>অ্যাপ → পণ্য → <b>"ক্যাটালগ থেকে খুঁজুন"</b> <span class="pill app">APP</span></td>
+        <td>পুরো ডাটাবেসে সার্চ → একটা-একটা বা অনেকগুলো একসাথে যোগ</td></tr>
+    <tr><td>নতুন পণ্য ফর্ম</td><td>নাম টাইপ করতেই সাজেশন — জেনেরিক/কোম্পানি/ফর্ম অটো-ভরা</td></tr>
+    <tr><td>Rx স্ক্যান</td><td>প্রেসক্রিপশনের ছবি → ওষুধ শনাক্ত</td></tr>
+    <tr><td>ওষুধ ছবি স্ক্যান</td><td>প্যাকেটের ছবি → কোন ওষুধ তা চেনে</td></tr>
+  </table>
+  <figure><img src="shots/guide/seba_products.png" alt="সেবা ফার্মেসি পণ্য">
+    <figcaption>Seba Pharmacy-র পণ্য তালিকা — স্ট্রিপ/বোতল একক, কোম্পানি ও স্টক-মূল্যসহ</figcaption></figure>
+
+  <h3>অ্যাপে ক্যাটালগ — ফোনের আসল স্ক্রিন</h3>
+  <div class="phones">
+    <figure><img src="shots/guide/ph_products.png" alt="অ্যাপে পণ্য তালিকা">
+      <figcaption>অ্যাপে পণ্য তালিকা — "স্টক শেষ"/"পর্যাপ্ত" ব্যাজসহ; উপরের ডান আইকনেই "ক্যাটালগ থেকে খুঁজুন"</figcaption></figure>
+    <figure><img src="shots/guide/ph_catalog_sheet.png" alt="ক্যাটালগ খোঁজ">
+      <figcaption>"ক্যাটালগ থেকে খুঁজুন" — ৪১,০০০+ অনুমোদিত ওষুধ ও জেনেরিক ডাটাবেস; DGDA অনুমোদিত / NEML তালিকাভুক্ত ফিল্টার</figcaption></figure>
+    <figure><img src="shots/guide/ph_catalog_results.png" alt="ক্যাটালগ ফলাফল">
+      <figcaption>"napa" সার্চ — কোম্পানি·জেনেরিক·ফর্ম·দামসহ তালিকা; "+ যোগ" দিয়ে এক ট্যাপে পণ্য, আগে থেকে থাকলে "তালিকায় আছে"</figcaption></figure>
+  </div>
+
+  <h3>প্রেসক্রিপশন আর ঔষধের ছবি দিয়েই বিক্রি <span class="pill app">APP</span></h3>
+  <p class="lead">কাউন্টারে ক্রেতা প্রেসক্রিপশন বা এক মুঠো স্ট্রিপ ধরলে টাইপ করতে হয় না —
+  ছবি তুললেই ওষুধের নাম পড়ে কার্টে বসে যায়। POS-এর উপরের আইকনেই দুটো যাদু।</p>
+  <div class="grid g3">
+    <div class="card"><b>"Rx থেকে বিক্রি"</b><p>ঔষধের আইকনে চাপলে <b>সংরক্ষিত প্রেসক্রিপশনের তালিকা</b> —
+    রোগীর নাম, ডাক্তার, তারিখ, কয়টা ওষুধসহ। একটা বেছে দিলেই ওষুধগুলো কার্টে।</p></div>
+    <div class="card"><b>প্রেসক্রিপশনের ছবি পড়া</b><p>"নতুন Rx স্ক্যান" → ছবি তুলুন —
+    ওষুধের নাম, ডোজ, "১+০+১" রুটিন, কত দিন — সব পড়ে আসে। ভুল থাকলে মিলিয়ে সংরক্ষণ —
+    রোগী-ডাক্তার-রেজিসহ <b>Rx আর্কাইভে জমা</b> থাকে।</p></div>
+    <div class="card"><b>ঔষধের ছবি থেকে কার্ট</b><p>ক্যামেরা আইকনে এক মুঠো স্ট্রিপ/বক্সের ছবি —
+    নামগুলো পড়ে দোকানের পণ্যের সাথে মিলিয়ে কার্টে বসায়। তালিকায় না থাকলে
+    ক্যাটালগ থেকে "যোগ" দেওয়ার অপশনও আসে।</p></div>
+  </div>
+  <div class="phones">
+    <figure><img src="shots/guide/ph_pos_rx_icons.png" alt="POS-এ Rx আইকন">
+      <figcaption>POS-এর উপরের বার — "Rx থেকে বিক্রি" আর "ঔষধের ছবি থেকে বিক্রি" আইকন; ম্যাক্সপ্রোর কার্ডে সবুজ Rx ব্যাজ</figcaption></figure>
+    <figure><img src="shots/guide/ph_rx_picker.png" alt="Rx তালিকা">
+      <figcaption>"Rx থেকে বিক্রি" — সংরক্ষিত প্রেসক্রিপশন: রোগী, ডাক্তার, তারিখ, ওষুধ-সংখ্যা; উপরে "নতুন Rx স্ক্যান"</figcaption></figure>
+    <figure><img src="shots/guide/ph_rx_scan.png" alt="Rx স্ক্যান">
+      <figcaption>নতুন Rx স্ক্যান — "ছবি তুলে স্ক্যান" অথবা "ম্যানুয়ালি যোগ"</figcaption></figure>
+    <figure><img src="shots/guide/ph_med_photo_scan.png" alt="ঔষধ ছবি স্ক্যান">
+      <figcaption>ঔষধ ছবি স্ক্যান — "এক মুঠো স্ট্রিপ/বক্সের ছবি তুলুন"; আগে ফোনেই পড়ে (ফ্রি), না পারলে AI</figcaption></figure>
+  </div>
+
+  <h3>মেয়াদ — শুধু অ্যালার্ট না, বিক্রির ভেতরেই রক্ষা <span class="pill web">WEB</span><span class="pill app">APP</span></h3>
+  <div class="grid g3">
+    <div class="card"><b>FEFO নিজে চলে</b><p>কম মেয়াদের ব্যাচ আগে বিক্রি হয় — ক্যাশিয়ারকে ভাবতে হয় না;
+    চাইলে ব্যাচ বেছে নির্দিষ্ট লটও দেওয়া যায়।</p></div>
+    <div class="card"><b>"কোর্স শেষ হবে না" সতর্কতা</b><p>ক্রেতার কেনা পরিমাণ মেয়াদের আগে শেষ হবে না
+    বুঝলে বিক্রির আগেই সতর্ক করে — "মেয়াদ বাকি X দিন (কোর্স লাগবে ~Y দিন)"। ইন্টারনেট ছাড়াও কাজ করে।</p></div>
+    <div class="card"><b>কেনার সময় মেয়াদ ছবিতে পড়া</b><p>মাল ঢোকানোর ফর্মে মেয়াদের ঘরে
+    ক্যামেরা — প্যাকের ওপরের EXP নিজে পড়ে বসে যায়, টাইপ ভুল হয় না।</p></div>
+    <div class="card"><b>Rx-লাগা ওষুধে জোর করে রেকর্ড</b><p>কার্টে প্রেসক্রিপন-জরুরি ওষুধ থাকলে
+    বিক্রি আটকে দেয় — রোগী/ডাক্তার/রেজি নং আর প্রেসক্রিপশনের ছবি জমা নিলেই ছাড়ে;
+    রেকর্ডটা Rx আর্কাইভে বিক্রির সাথে যুক্ত থাকে।</p></div>
+    <div class="card"><b>ফেরত এক ক্লিকে</b><p>ব্যাচ খতিয়ান থেকেই "সরবরাহকারীতে ফেরত" —
+    চালান থেকে সব তথ্য ভরে আসে, হাতে কিছু লিখতে হয় না।</p></div>
+    <div class="card"><b>স্ক্যান খরচ কম</b><p>প্রথমে ফোনেই পড়ার চেষ্টা (ফ্রি), একই ছবি আবার দিলে
+    আগের ফল (ফ্রি) — শুধু নতুন AI পড়ায় স্ক্যান টোকেন কাটে; শেষ হলে প্যাক কেনা যায়।</p></div>
+  </div>
+  <div class="warn">Rx স্ক্যান আর ঔষধ-ছবি স্ক্যান চালু থাকে ফার্মেসি প্ল্যানের ফিচার হিসেবে —
+  ডেমোর আগে <code>ai.medicine_photo</code> ফিচার আর স্ক্যান টোকেন আছে কিনা দেখুন।
+  Rx গেট কাজ করে পণ্যে "প্রেসক্রিপন প্রয়োজন" চিহ্ন থাকলে।</div>
+
+  <div class="phones">
+    <figure><img src="shots/04_pos.png" alt="POS">
+      <figcaption>POS-এ সবুজ Rx ব্যাজ</figcaption></figure>
+    <figure><img src="shots/guide/seba_prescriptions.png" alt="প্রেসক্রিপশন">
+      <figcaption>প্রেসক্রিপশন আর্কাইভ — BMDC রেজিসহ</figcaption></figure>
+    <figure><img src="shots/guide/seba_expiry.png" alt="মেয়াদ">
+      <figcaption>মেয়াদ অ্যালার্ট — ফেরতযোগ্য ৳৪,৬৬০</figcaption></figure>
+    <figure><img src="shots/guide/seba_controlled.png" alt="কন্ট্রোল্ড">
+      <figcaption>নিয়ন্ত্রিত ওষুধের রেজিস্টার</figcaption></figure>
+  </div>
+  <div class="grid g2">
+    <div class="card"><b>জেনেরিক + সাবস্টিটিউট</b><p>একই মলিকিউলের ব্র্যান্ড খুঁজে দেয় — একটা না থাকলে বিকল্প।</p></div>
+    <div class="card"><b>ব্যাচ + FEFO</b><p>আগে মেয়াদ শেষ হওয়া ব্যাচ আগে বিক্রি হয় — নিজে সাজে।</p></div>
+  </div>
+  <div class="key">হাজার ওষুধ নিজে বসাতে মাস লাগে — আমাদের ক্যাটালগে আগেই আছে।</div>
+  <div class="warn">"ক্যাটালগ থেকে খুঁজুন" শুধু ফার্মেসিতে দেখায় — এটাই স্কোপের প্রমাণ।
+  ডেমোর আগে ক্যাটালগ সংযোগ (<code>CATALOG_URL</code>) চালু আছে কিনা দেখুন।</div>
+</section>
+
+<!-- ═══ S7 MAP ═══ -->
+<section id="s7">
+  <div class="sec-head"><span class="num">০৭</span><h2>দোকানের ম্যাপ</h2>
+    <span class="sub">"পণ্য কোথায়?" — সেটআপ গাইড</span></div>
+  <p class="lead">বড় দোকানে "ম্যাগি কোথায়?" — উত্তর এখন মোবাইলে। চার ধাপে চালু করুন।</p>
+
+  <div class="step"><div class="n">১</div><div class="b">
+    <h4>ম্যাপ খুলে উইজার্ড চালান <span class="pill web">WEB</span></h4>
+    <p>Inventory → <b>"দোকানের ম্যাপ"</b> → "সেটআপ উইজার্ড"। ৮টা ধাপে নিয়ে যায় —
+    দোকানের মাপ (ফুট/মিটার) দিয়ে শুরু।</p>
+  </div></div>
+  <figure><img src="shots/guide/modi_map_wizard1.png" alt="উইজার্ড">
+    <figcaption>উইজার্ডের ১/৮ ধাপ — দোকানের মাপ দিন, লেআউট নিজে বানায়</figcaption></figure>
+  <div class="step"><div class="n">২</div><div class="b">
+    <h4>ফার্নিচার বসান</h4>
+    <p>কয়টা তাক/র‍্যাক/ফ্রিজ/কাউন্টার বলুন — উইজার্ড সাজায়। মুদিতে বস্তার স্ট্যাক-সবজির ক্রেট,
+    ফার্মেসিতে ড্রয়ার-ফ্রিজ। রঙে জোন আঁকুন ("ওষুধ জোন", "সারি A")।</p>
+  </div></div>
+  <div class="step"><div class="n">৩</div><div class="b">
+    <h4>পণ্য তাকে বসান</h4>
+    <p>তাকে QR লেবেল লাগান → পণ্য স্ক্যান/তালিকা থেকে লোকেশন অ্যাসাইন।
+    "লোকেশনহীন" ব্যাজ দেখায় কতটা বাকি।</p>
+  </div></div>
+  <div class="step"><div class="n">৪</div><div class="b">
+    <h4>খুঁজে পথ দেখুন <span class="pill app">APP</span></h4>
+    <p>অ্যাপে ম্যাপে "পণ্য খুঁজুন" লিখুন — সেই তাক পর্যন্ত হাঁটার পথ আঁকে।</p>
+  </div></div>
+
+  <h3>অ্যাপে ম্যাপ — আসল স্ক্রিন</h3>
+  <div class="apps">
+    <figure><img src="shots/guide/app_shop_map.png" alt="অ্যাপে দোকানের ম্যাপ">
+      <figcaption>অ্যাপে "দোকানের ম্যাপ" — 2D লেআউটে র‍্যাক, কাউন্টার আর প্রবেশপথ; উপরে "পণ্য খুঁজুন" ঘর</figcaption></figure>
+    <figure><img src="shots/guide/app_map_search.png" alt="ম্যাপে পণ্য খোঁজ">
+      <figcaption>নাম লিখতেই লোকেশনসহ সাজেশন — নাপা ৫০০ → Front Shelf, নাপা সিরাপ → Rack E · তলা ১, ইনজেকশন → Insulin Fridge</figcaption></figure>
+    <figure><img src="shots/guide/ph_map_search_top.png" alt="ফোনে ম্যাপ সার্চ">
+      <figcaption>ফোনে "napa" লিখতেই প্রতিটা পণ্যের ঠিকানা — কোন তাক, কোন তলা</figcaption></figure>
+    <figure><img src="shots/guide/app_map_route.png" alt="পথ দেখানো">
+      <figcaption>পণ্য বেছে নিলে হাঁটার পথ নীল দাগে আঁকে আর র‍্যাকটা হাইলাইট হয় — কর্মচারী হাতে নিয়ে হেঁটে যায়</figcaption></figure>
+    <figure><img src="shots/guide/app_map_rack.png" alt="র‍্যাকের বিস্তারিত">
+      <figcaption>তাকে ট্যাপ করলে সে তাকের সব পণ্য, বিক্রির হিসাব আর মেয়াদ সতর্কতা ("ফেলে দিন") একসাথে</figcaption></figure>
+  </div>
+
+  <h3>বিক্রির সময়ই পথ জানা যায় — আলাদা করে খুঁজতে হয় না</h3>
+  <p class="lead">ম্যাপে পণ্য বসানো থাকলে কাউন্টারের বিক্রির ভেতরেই ঠিকানা আসে।
+  ছেলেকে আর জিজ্ঞেস করতে হয় না "ওটা কোথায় রাখলি?"</p>
+  <div class="grid g3">
+    <div class="card"><b>পণ্য কার্ডেই লোকেশন <span class="pill web">WEB</span><span class="pill app">APP</span></b><p>POS-এর প্রতিটা পণ্যের কার্ডে
+    ম্যাপ-পিন আর তাকের নম্বর — ট্যাপ/ক্লিক দিলেই সেই তাকে ম্যাপ খোলে।</p></div>
+    <div class="card"><b>কার্টে প্রতি লাইনে ঠিকানা <span class="pill web">WEB</span><span class="pill app">APP</span></b><p>বিলে ঢোকানো পণ্যের নিচে
+    "র‍্যাক A — প্রচলিত · তলা ৩" লেখা থাকে — চাপলে সেই জায়গার পথ দেখায়।</p></div>
+    <div class="card"><b>পুরো বিলের এক পিক-পথ <span class="pill app">APP</span></b><p>"সব আইটেমের লোকেশন ম্যাপে দেখুন"
+    চাপলে বিলের সব পণ্যের জায়গা নম্বর দিয়ে জ্বলে, একটাই হাঁটার পথে সাজে —
+    "পরবর্তী: কোন তাক"ও দেখায়।</p></div>
+  </div>
+  <div class="phones">
+    <figure><img src="shots/guide/ph_pos_location.png" alt="POS পিন">
+      <figcaption>ফার্মেসির POS — প্রতি কার্ডে পিন ব্যাজে তাকের নম্বর (নাপা ৫০০ → তলা ১, ম্যাক্সপ্রো → তলা ৩), সাথে Rx ব্যাজ</figcaption></figure>
+    <figure><img src="shots/guide/ph_cart_locations.png" alt="কার্টে লোকেশন">
+      <figcaption>কার্ট — নাপা ৫০০ "সামনের তাক", এস ৫০০ "র‍্যাক A · তলা ২", ম্যাক্সপ্রো "র‍্যাক A · তলা ৩"; উপরে "সব আইটেমের লোকেশন ম্যাপে দেখুন · ২ টি জায়গা"</figcaption></figure>
+    <figure><img src="shots/guide/ph_cart_pick_map.png" alt="পিক পথ">
+      <figcaption>পিক-পথ — বিলের সব তাক নম্বরসহ জ্বলে, দরজা থেকে নীল দাগে হাঁটার পথ; নিচে "পরবর্তী: কোন তাক"</figcaption></figure>
+  </div>
+
+  <h3>2D আর 3D — দুটোই আছে</h3>
+  <figure><img src="shots/guide/map_mock_3d.png" alt="3D">
+    <figcaption>3D ভিউ — আসল দোকানের মতো; ভিডিও/স্ক্রিনশটের জন্য সেরা দৃশ্য</figcaption></figure>
+  <div class="phones">
+    <figure><img src="shots/guide/map_mock_2d.png" alt="2D">
+      <figcaption>2D গ্রিড ম্যাপ — অ্যাপে নেটিভ, অফলাইনেও</figcaption></figure>
+    <figure><img src="shots/guide/seba_shopmap.png" alt="ম্যাপ পেজ">
+      <figcaption>রিয়াল পেজ — 2D/3D টগল, "লোকেশনহীন" ব্যাজ</figcaption></figure>
+  </div>
+  <div class="key">নতুন কর্মচারী এলেই আর 'জিনিসটা কোথায়?' বলতে হয় না — ম্যাপে পথ দেখে যায়।</div>
+  <div class="warn">ডেমোর আগে একবার উইজার্ডে লেআউট বানিয়ে ৪-৫টা পণ্য বসিয়ে নিন।</div>
+</section>
+
+<!-- ═══ S8 DEMO ═══ -->
+<section id="s8">
+  <div class="sec-head"><span class="num">০৮</span><h2>ডেমো ও লগিন</h2>
+    <span class="sub">২৫ মিনিটের স্ক্রিপ্ট</span></div>
+  <p class="lead">সব পাসওয়ার্ড <code>Demo@12345</code>। এই ক্রমে দেখালে পুরো গল্প বেরিয়ে আসে।</p>
+
+  <div class="step"><div class="n">১</div><div class="b">
+    <h4>মুদি দোকানে শুরু — ৮ মিনিট <span class="pill app">APP</span></h4>
+    <p><code>01000000701</code> (Shafiq Modi Store) → সহজ ভিউ → করিম চাচার বাকি আদায় →
+    ক্যাশবক্স → দিন বন্ধ।<br><b>দেখানো হবে:</b> ইনভেন্টরি না চালালেও পুরো হিসাব চলে।</p>
+  </div></div>
+  <div class="step"><div class="n">২</div><div class="b">
+    <h4>পূর্ণ ভিউ — ৪ মিনিট <span class="pill app">APP</span></h4>
+    <p>"সব মেনু" → মেয়াদসহ ক্রয়, ফ্রি অফার, আজকের দাম, স্টক গোনা।<br>
+    <b>দেখানো হবে:</b> দোকান বড় হলে এখানেই বড় হয়।</p>
+  </div></div>
+  <div class="step"><div class="n">৩</div><div class="b">
+    <h4>ফার্মেসি — ৮ মিনিট <span class="pill web">WEB</span> <span class="pill app">APP</span></h4>
+    <p><code>01000000591</code> (Seba Pharmacy) → "ক্যাটালগ থেকে খুঁজুন" → "নাপা" → বাল্ক-অ্যাড →
+    মেয়াদ অ্যালার্ট → Rx স্ক্যান।<br><b>দেখানো হবে:</b> ফার্মেসির জন্য আলাদা ফিচার।</p>
+  </div></div>
+  <div class="step"><div class="n">৪</div><div class="b">
+    <h4>ম্যাপ — ৩ মিনিট <span class="pill web">WEB</span></h4>
+    <p><code>/shop-map</code> → 3D → অ্যাপে "পণ্য খুঁজুন" পথ দেখান।</p>
+  </div></div>
+  <div class="step"><div class="n">৫</div><div class="b">
+    <h4>রোল প্রমাণ — ২ মিনিট</h4>
+    <p><code>01000000592</code> (ফার্মাসিস্ট) লগিন → সেটিংস/ফাইন্যান্স নেই।<br>
+    <b>দেখানো হবে:</b> কর্মচারী শুধু নিজের কাজের মেনু দেখে।</p>
+  </div></div>
+
+  <h3>লগিন তালিকা</h3>
+  <table>
+    <tr><th>কোম্পানি</th><th>লগিন</th><th>রোল</th><th>কী দেখাবেন</th></tr>
+    <tr><td>Shafiq Modi Store</td><td><code>01000000701</code></td><td>মালিক</td><td>খাতা মোড, বাকি, UOM, মেয়াদ</td></tr>
+    <tr><td>Seba Pharmacy</td><td><code>01000000591</code></td><td>মালিক</td><td>ক্যাটালগ→পণ্য, Rx, FEFO, কন্ট্রোল্ড</td></tr>
+    <tr><td></td><td><code>01000000592</code></td><td>ফার্মাসিস্ট</td><td>কর্মচারী-রোল ভিউ</td></tr>
+    <tr><td>Banalata Bhandar (পাইকার)</td><td><code>01000000401</code></td><td>মালিক</td><td>টিয়ার প্রাইস, "পার্টি", মাল্টি-ব্রাঞ্চ</td></tr>
+    <tr><td></td><td><code>01000000413</code></td><td>উত্তরা সেলসম্যান</td><td>ব্রাঞ্চ-স্কোপড</td></tr>
+    <tr><td>Dhaka Mobile Zone</td><td><code>01000000001</code></td><td>মালিক</td><td>পাশের সেগমেন্ট: IMEI/EMI/রিপেয়ার</td></tr>
+  </table>
+
+  <h3>মূল পয়েন্ট এক নজরে</h3>
+  <ul class="tick">
+    <li>হাজার ওষুধ নিজে টাইপ করতে হয় না — ডাটাবেসে আগেই আছে</li>
+    <li>ইনভেন্টরি ছাড়াও পুরো হিসাব চলে — সিম্পল মোডে</li>
+    <li>মেয়াদ শেষের আগেই অ্যাপ জানায় — মাসে হাজার টাকা বাঁচে</li>
+    <li>নতুন কর্মচারী ম্যাপ দেখে নিজেই পণ্য খুঁজে নেয়</li>
+    <li>দোকানের ধরন অনুযায়ী অ্যাপ নিজে ফিচার ঠিক করে</li>
+    <li>নেট গেলেও বিক্রি চলে — পরে নিজে সিঙ্ক হয়</li>
+  </ul>
+</section>
+
+</main>
+</div>
+
+<div class="lb" id="lb"><img id="lbimg" alt=""></div>
+
+<script>
+// scroll-spy: highlight sidebar link for the section in view
+const links=[...document.querySelectorAll('.side a')];
+const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+const spy=new IntersectionObserver(es=>{
+  es.forEach(e=>{if(e.isIntersecting){
+    links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id));
+  }});
+},{rootMargin:'-30% 0px -60% 0px'});
+secs.forEach(s=>s&&spy.observe(s));
+// close mobile drawer on nav
+links.forEach(a=>a.onclick=()=>document.getElementById('side').classList.remove('open'));
+
+const lb=document.getElementById('lb'),lbimg=document.getElementById('lbimg');
+document.querySelectorAll('figure img').forEach(im=>im.onclick=()=>{lbimg.src=im.src;lb.classList.add('open')});
+lb.onclick=()=>lb.classList.remove('open');
+document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('open')});
+</script>
+</body>
+</html>
